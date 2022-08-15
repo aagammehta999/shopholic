@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 from decouple import config 
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -151,3 +152,5 @@ EMAIL_USE_TLS=config('EMAIL_USE_TLS',cast=bool)
 
 RAZORPAY_API_KEY_ID = config('RAZORPAY_API_KEY_ID')
 RAZORPAY_API_KEY_SECRET = config('RAZORPAY_API_KEY_SECRET')
+
+django_heroku.settings(locals())
