@@ -138,7 +138,10 @@ STATICFILES_DIRS=[
 #media file configuration 
 MEDIA_URL='/media/'
 MEDIA_ROOT=BASE_DIR / 'media'
+STATICFILE_FINDERS = (
 
+  'django_collectstatic_bower.staticfiles.finders.BowerComponentFinder',
+)
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
